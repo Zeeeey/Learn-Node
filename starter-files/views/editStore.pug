@@ -4,6 +4,8 @@ include mixins/_storeForm
 
 block content
     .inner
+        //- pre= h.dump(store)
         h2 #{title}
-        //- p= title
-        +storeForm({ name: 'Tim Hortons'})
+        //- h2= title
+        //- +storeForm({ name: 'Tim Hortons'})
+        +storeForm(store)
