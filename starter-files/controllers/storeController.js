@@ -84,3 +84,9 @@ exports.getStoreBySlug = async(req, res, next) => {
     if(!store) return next(); // if no valid store exists, render the 404 page i.e errorHandlers.js
     res.render('store', {store, title: `Edit ${store.name}`})
 }
+
+exports.getStoresByTag = async(req, res) => {
+    const tags = await Store.getTagsList();
+    const tag = req.params.tag;
+    res.render('tag', { tags, tag} )
+}
