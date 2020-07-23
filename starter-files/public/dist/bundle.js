@@ -930,7 +930,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 function autocomplete(input, latInput, lngInput) {
-    // console.log(input, latInput, lngInput)
+    console.log(input, latInput, lngInput);
     if (!input) return; // skip this fn from running if there is not an input(address) on the page
 
     var dropdown = new google.maps.places.Autocomplete(input);
@@ -979,7 +979,34 @@ exports.$ = $;
 exports.$$ = $$;
 
 /***/ }),
-/* 12 */,
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _axios = __webpack_require__(1);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function loadPlaces(map) {
+    var lat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 43.2;
+    var lng = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : -79.8;
+}
+
+function makeMap(mapDiv) {
+    console.log('mapDiv', mapDiv);
+}
+
+exports.default = makeMap;
+
+/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3283,12 +3310,18 @@ var _typeAhead = __webpack_require__(13);
 
 var _typeAhead2 = _interopRequireDefault(_typeAhead);
 
+var _map = __webpack_require__(12);
+
+var _map2 = _interopRequireDefault(_map);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _autocomplete2.default)((0, _bling.$)('#address'), (0, _bling.$)('#lat'), (0, _bling.$)('#lng'));
-
+console.log('object');
 (0, _typeAhead2.default)((0, _bling.$)('.search'));
+
+(0, _map2.default)((0, _bling.$)('#map'));
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=App.bundle.js.map
+//# sourceMappingURL=bundle.js.map
