@@ -148,3 +148,6 @@ exports.mapStores = async (req, res) => {
     res.json(stores);
   };
   
+  exports.mapPage = (req, res) => {
+      res.render('map', { title: 'Map' });
+  }
