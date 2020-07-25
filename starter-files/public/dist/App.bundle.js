@@ -1042,6 +1042,8 @@ function loadPlaces(map) {
     // then zoom the map to fit all the markers perfectly
     map.setCenter(bounds.getCenter());
     map.fitBounds(bounds);
+  }).catch(function (err) {
+    return console.error(err);
   });
 }
 
