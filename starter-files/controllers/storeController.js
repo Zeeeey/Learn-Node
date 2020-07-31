@@ -98,7 +98,7 @@ exports.updateStore = async (req, res) => {
 }
 
 exports.getStoreBySlug = async(req, res, next) => {
-    const store = await Store.findOne({ slug: req.params.slug })
+    const store = await Store.findOne({ slug: req.params.slug }).populate('author reviews');
     if(!store) return next(); // if no valid store exists, render the 404 page i.e errorHandlers.js
     res.render('store', {store, title: `Edit ${store.name}`})
 }
