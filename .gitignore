@@ -5,3 +5,7 @@ node_modules/
 haters/
 variables.env
 variables.env.now
+<<<<<<< HEAD
+=======
+package-lock.json
+>>>>>>> 77bb15e35eba77c3b47d9a42a19b460d34e640d1
